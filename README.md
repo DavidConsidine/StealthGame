@@ -7,3 +7,5 @@
 ### SG03: Setup ActorComponents ###
 
 ### SG04: Setup Collision and Overlap Event ###
+
+### SG05: Pickup Objective Actor ###
