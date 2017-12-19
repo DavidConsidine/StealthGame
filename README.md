@@ -9,3 +9,5 @@
 ### SG04: Setup Collision and Overlap Event ###
 
 ### SG05: Pickup Objective Actor ###
+
+### SG06: Setup Objective UI with UMG ###
