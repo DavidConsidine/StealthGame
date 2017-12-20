@@ -17,3 +17,5 @@
 ### SG08: Create Extraction Zone ###
 
 ### SG09: Polish Extraction Zone ###
+
+### SG10: Setup Mission End ###
