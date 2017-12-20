@@ -11,3 +11,5 @@
 ### SG05: Pickup Objective Actor ###
 
 ### SG06: Setup Objective UI with UMG ###
+
+### SG07: Challenge: Create a Black Hole ###
