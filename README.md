@@ -13,3 +13,5 @@
 ### SG06: Setup Objective UI with UMG ###
 
 ### SG07: Challenge: Create a Black Hole ###
+
+### SG08: Create Extraction Zone ###

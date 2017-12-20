@@ -25,7 +25,7 @@ protected:
 
 	UPROPERTY(VisibleAnywhere, Category = "Components")
 	USphereComponent* InnerSphereComponent;
-
+	
 	UPROPERTY(VisibleAnywhere, Category = "Components")
 	USphereComponent* OuterSphereComponent;
 
