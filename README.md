@@ -21,3 +21,5 @@
 ### SG10: Setup Mission End ###
 
 ### SG11: Add Extraction Feedback ###
+
+### SG12: Setup Post-mission Camera ###
