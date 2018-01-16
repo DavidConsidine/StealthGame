@@ -23,3 +23,5 @@
 ### SG11: Add Extraction Feedback ###
 
 ### SG12: Setup Post-mission Camera ###
+
+### SG13: Challenge: Create a Launch Pad ###
