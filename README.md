@@ -27,3 +27,5 @@
 ### SG13: Challenge: Create a Launch Pad ###
 
 ### SG14: Create AI Guard Class ###
+
+### SG15: Setup Sight Sense ###

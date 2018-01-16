@@ -24,6 +24,12 @@ protected:
 	UPROPERTY(VisibleAnywhere, Category = "Components")
 	UPawnSensingComponent* PawnSensingComp;
 
+	UFUNCTION()
+	void OnPawnSeen(APawn* SeenPawn);
+
+	//UFUNCTION()
+	//void OnPawnHeard(APawn* HeardPawn, const FVector& SoundLocation, float Volume);
+
 public:	
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
