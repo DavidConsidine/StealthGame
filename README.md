@@ -43,3 +43,5 @@
 ### SG21: Challenge: Setup AI Guard Patrol ###
 
 ### SG22: Prepare the Mission ###
+
+### SG23: Network the Projectile ###
