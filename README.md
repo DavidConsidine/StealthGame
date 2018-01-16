@@ -25,3 +25,5 @@
 ### SG12: Setup Post-mission Camera ###
 
 ### SG13: Challenge: Create a Launch Pad ###
+
+### SG14: Create AI Guard Class ###
