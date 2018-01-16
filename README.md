@@ -41,3 +41,5 @@
 ### SG20: Add 3D UI state abouve guard ###
 
 ### SG21: Challenge: Setup AI Guard Patrol ###
+
+### SG22: Prepare the Mission ###
