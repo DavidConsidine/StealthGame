@@ -35,3 +35,5 @@
 ### SG17: Add Noise Making to Projecile ###
 
 ### SG18: Setup Guard Distraction ###
+
+### SG19: Add game-over trigger when spotted ###
