@@ -39,3 +39,5 @@
 ### SG19: Add game-over trigger when spotted ###
 
 ### SG20: Add 3D UI state abouve guard ###
+
+### SG21: Challenge: Setup AI Guard Patrol ###

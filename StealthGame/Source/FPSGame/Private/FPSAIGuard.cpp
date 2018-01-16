@@ -4,6 +4,7 @@
 #include "Perception/PawnSensingComponent.h"
 #include "DrawDebugHelpers.h"
 #include "FPSGameMode.h"
+#include "AI/Navigation/NavigationSystem.h"
 
 
 // Sets default values
@@ -27,6 +28,11 @@ void AFPSAIGuard::BeginPlay()
 	PawnSensingComp->OnHearNoise.AddDynamic(this, &AFPSAIGuard::OnNoiseHeard);
 
 	OriginalRotation = GetActorRotation();
+
+	if (bPatrol)
+	{
+		MoveToNextPatrolPoint();
+	}
 }
 
 void AFPSAIGuard::OnPawnSeen(APawn * SeenPawn)
@@ -45,6 +51,13 @@ void AFPSAIGuard::OnPawnSeen(APawn * SeenPawn)
 	}
 
 	OnStateChanged(EAIState::Alerted);
+
+	// Stop Movement if Patrolling
+	AController* Controller = GetController();
+	if (Controller)
+	{
+		Controller->StopMovement();
+	}
 }
 
 void AFPSAIGuard::OnNoiseHeard(APawn * Instigator, const FVector& Location, float Volume)
@@ -71,6 +84,13 @@ void AFPSAIGuard::OnNoiseHeard(APawn * Instigator, const FVector& Location, floa
 	GetWorldTimerManager().SetTimer(TimerHandle_ResetOrientation, this, &AFPSAIGuard::ResetOrientation, 3.0f);
 
 	OnStateChanged(EAIState::Suspicious);
+
+	// Stop Movement if Patrolling
+	AController* Controller = GetController();
+	if (Controller)
+	{
+		Controller->StopMovement();
+	}
 }
 
 void AFPSAIGuard::ResetOrientation()
@@ -81,8 +101,14 @@ void AFPSAIGuard::ResetOrientation()
 	}
 
 	SetActorRotation(OriginalRotation);
-	
+
 	OnStateChanged(EAIState::Idle);
+
+	// Stopped investigating...if we are a patrolling pawn, pick a new patrol point to move to
+	if (bPatrol)
+	{
+		MoveToNextPatrolPoint();
+	}
 }
 
 void AFPSAIGuard::SetGuardState(EAIState newState)
@@ -102,5 +128,33 @@ void AFPSAIGuard::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
 
+	// Patrol Gaol Checks
+	if (CurrentPatrolPoint)
+	{
+		FVector Delta = GetActorLocation() - CurrentPatrolPoint->GetActorLocation();
+		float DistanceToGoal = Delta.Size();
+
+		// Check if we are within 50 units of out goal, if so - pick a new patrol point
+		if(DistanceToGoal < 50)
+		{
+			MoveToNextPatrolPoint();
+		}
+	}
+
+}
+
+void AFPSAIGuard::MoveToNextPatrolPoint()
+{
+	// Assign next patrol point.
+	if (CurrentPatrolPoint == nullptr || CurrentPatrolPoint == SecondPatrolPoint)
+	{
+		CurrentPatrolPoint = FirstPatrolPoint;
+	}
+	else
+	{
+		CurrentPatrolPoint = SecondPatrolPoint;
+	}
+
+	UNavigationSystem::SimpleMoveToActor(GetController(), CurrentPatrolPoint);
 }
 

@@ -56,6 +56,24 @@ public:
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
 
+protected:
+
+	// CHALLENGE CODE
+
+	/* First of two patrol points to patrol between */
+	UPROPERTY(EditInstanceOnly, Category = "AI")
+	bool bPatrol;
+
+	/* First of two patrol points to patrol between */
+	UPROPERTY(EditInstanceOnly, Category = "AI", meta = (EditCondition="bPatrol"))
+	AActor* FirstPatrolPoint;
+
+	/* Second of two patrol points to patrol between */
+	UPROPERTY(EditInstanceOnly, Category = "AI", meta = (EditCondition = "bPatrol"))
+	AActor* SecondPatrolPoint;
+
+	// The Current point the actor is either moving to or standing at
+	AActor* CurrentPatrolPoint;
 	
-	
+	void MoveToNextPatrolPoint();
 };
