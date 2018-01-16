@@ -33,3 +33,5 @@
 ### SG16: Setup Hearing Sense ###
 
 ### SG17: Add Noise Making to Projecile ###
+
+### SG18: Setup Guard Distraction ###
