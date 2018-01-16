@@ -31,3 +31,5 @@
 ### SG15: Setup Sight Sense ###
 
 ### SG16: Setup Hearing Sense ###
+
+### SG17: Add Noise Making to Projecile ###
