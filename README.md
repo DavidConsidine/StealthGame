@@ -29,3 +29,5 @@
 ### SG14: Create AI Guard Class ###
 
 ### SG15: Setup Sight Sense ###
+
+### SG16: Setup Hearing Sense ###
