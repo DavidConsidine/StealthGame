@@ -51,3 +51,5 @@
 ### SG25: Network the Objective Actor ###
 
 ### SG26: Network the AI Guards ###
+
+### SG27: Network the Game State Part 1 ###
