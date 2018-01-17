@@ -47,3 +47,5 @@
 ### SG23: Network the Projectile ###
 
 ### SG24: Network Player View Pitch ###
+
+### SG25: Network the Objective Actor ###
