@@ -51,7 +51,7 @@ void AFPSAIGuard::OnPawnSeen(APawn * SeenPawn)
 		GM->CompleteMission(SeenPawn, false);
 	}
 
-	OnStateChanged(EAIState::Alerted);
+	SetGuardState(EAIState::Alerted);
 
 	// Stop Movement if Patrolling
 	AController* Controller = GetController();
@@ -84,7 +84,7 @@ void AFPSAIGuard::OnNoiseHeard(APawn * Instigator, const FVector& Location, floa
 	GetWorldTimerManager().ClearTimer(TimerHandle_ResetOrientation);
 	GetWorldTimerManager().SetTimer(TimerHandle_ResetOrientation, this, &AFPSAIGuard::ResetOrientation, 3.0f);
 
-	OnStateChanged(EAIState::Suspicious);
+	SetGuardState(EAIState::Suspicious);
 
 	// Stop Movement if Patrolling
 	AController* Controller = GetController();
@@ -103,7 +103,7 @@ void AFPSAIGuard::ResetOrientation()
 
 	SetActorRotation(OriginalRotation);
 
-	OnStateChanged(EAIState::Idle);
+	SetGuardState(EAIState::Idle);
 
 	// Stopped investigating...if we are a patrolling pawn, pick a new patrol point to move to
 	if (bPatrol)
