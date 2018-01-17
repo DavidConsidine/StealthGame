@@ -57,3 +57,5 @@
 ### SG28: Network the Game State Part 2 ###
 
 ### SG29: Network the Game State Part 3 ###
+
+### SG30: Activity: Play with a frined! ###
