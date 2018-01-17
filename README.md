@@ -49,3 +49,5 @@
 ### SG24: Network Player View Pitch ###
 
 ### SG25: Network the Objective Actor ###
+
+### SG26: Network the AI Guards ###
