@@ -53,3 +53,5 @@
 ### SG26: Network the AI Guards ###
 
 ### SG27: Network the Game State Part 1 ###
+
+### SG28: Network the Game State Part 2 ###
